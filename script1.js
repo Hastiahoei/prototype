@@ -14,3 +14,33 @@ console.log(myArray);
 
 console.log(myArray.average());
 console.log(yourArray.average());
+
+
+
+const Auto = {
+    marke: 'Heundi',
+    modell:'i20',
+    leistungKW: 62,
+    farbe: 'braun',
+    leasing: false
+}
+
+const Fahrrad ={
+    marke: 'Bw',
+    schaltung: '3/8',
+}
+
+const fahrzeug = Object.create(Auto);
+
+console.log(fahrzeug.marke);
+console.log(fahrzeug.leistungKW);
+console.log(fahrzeug.schaltung);
+
+Object.setPrototypeOf(fahrzeug, Fahrrad);
+
+console.log(fahrzeug.marke);
+console.log(fahrzeug.leistungKW);
+console.log(fahrzeug.schaltung);
+
+// Kein guter Stil, weil kein offizieller Bestandteil von Javascript
+console.log(fahrzeug.__proto__);
